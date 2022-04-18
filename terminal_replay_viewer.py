@@ -1,13 +1,13 @@
-import copy
 import os
 import time
 
-import argparse
+import copy
 import json
 import pickle
+import argparse
 
-import lz4.block
 import numpy as np
+import lz4.block
 from sty import fg, bg, ef, rs
 
 LOCAL_MAP_SIZE = 15
@@ -92,7 +92,6 @@ def print_canvas(data_map, data_frame, focus_id=9999):
     else:
         canvas = ''
 
-
         for yy in range(LOCAL_MAP_SIZE*2+1):
             for xx in range(LOCAL_MAP_SIZE*2+1):
                 ele = dmap[cy+yy-LOCAL_MAP_SIZE][cx+xx-LOCAL_MAP_SIZE]
@@ -118,6 +117,7 @@ def print_canvas(data_map, data_frame, focus_id=9999):
 
     print(canvas)
     
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='')
     parser.add_argument('filename', type=str, help='name of replay')
@@ -138,7 +138,10 @@ if __name__ == '__main__':
 
     for ii in range(len(data['packets'])-1):
         os.system('cls' if os.name == 'nt' else 'clear')
+
+        # main canvas
         print_canvas(data['map'], data['packets'][1+ii], focus_id)
 
+        # info panel
         print('\tTime: {}\t AgentID: {}'.format(ii, focus_id))
         time.sleep(0.1)
