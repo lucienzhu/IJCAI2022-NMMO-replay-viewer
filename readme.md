@@ -1,4 +1,5 @@
 Terminal Viewer for IJCAI2022-NMMO
+--------------
 
 ![Alt text](render_focus_id_9.gif)
 
