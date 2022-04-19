@@ -2,3 +2,7 @@
 .ipynb*
 
 demo.json
+demo*.yaml
+demo*.yml
+*.gif
+!render_focus_id_9.gif

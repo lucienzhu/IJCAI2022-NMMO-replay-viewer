@@ -1,3 +1,7 @@
+Terminal Viewer for IJCAI2022-NMMO
+
+![Alt text](render_focus_id_9.gif)
+
 # view replay in terminal
 
 1. Support `.json` or `.replay` format
@@ -27,6 +31,11 @@ python terminal_replay_viewer.py demo.replay --focus_id 9
 # replay file, view npc -1
 python terminal_replay_viewer.py demo.replay --focus_id -1
 ```
+
+## render the terminal output to `.gif`
+
+Try [Terminalizer](https://github.com/faressoft/terminalizer).
+
 
 # obtain replays from nmmo env
 
