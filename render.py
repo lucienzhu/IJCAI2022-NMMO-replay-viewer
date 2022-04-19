@@ -9,18 +9,6 @@ from ijcai2022nmmo import CompetitionConfig, TeamBasedEnv, scripted
 class Config(CompetitionConfig):
     RENDER = True
     SAVE_REPLAY = "demo"
-    EMULATE_FLAT_ATN = True
-
-
-def flatten_action(unflatten_actions, dictionary):
-    flattened_actions = {}
-    for k, v in unflatten_actions.items():
-        flattened_actions[k] = 0
-        for i, a in dictionary.items():
-            if v == a:
-                flattened_actions[k] = i
-                break
-    return flattened_actions
 
 
 def rollout():
@@ -37,9 +25,7 @@ def rollout():
         env.render()
         decision = {}
         for team_id, o in obs.items():
-            unflatten_actions = scripted_ai[team_id % len(scripted_ai)].act(o)
-            decision[team_id] = flatten_action(unflatten_actions,
-                                               env.flat_actions)
+            decision[team_id] = scripted_ai[team_id % len(scripted_ai)].act(o)
         obs, rew, done, info = env.step(decision)
         t += 1
         if t >= horizon:
