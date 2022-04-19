@@ -1,6 +1,8 @@
 Terminal Viewer for IJCAI2022-NMMO
 --------------
 
+This repo visualises `.replay` files generated from [IJCAI2022-Neural MMO Competition](https://www.aicrowd.com/challenges/ijcai-2022-the-neural-mmo-challenge).
+
 ![Alt text](render_focus_id_9.gif)
 
 # view replay in terminal
